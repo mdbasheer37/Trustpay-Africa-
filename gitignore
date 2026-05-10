@@ -1,0 +1,44 @@
+gitignore = """# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+
+# Virtual environments
+venv/
+.venv/
+env/
+
+# SQLite database - do NOT push local DB to GitHub
+*.db
+*.sqlite
+*.sqlite3
+
+# Environment variables - keep secrets off GitHub
+.env
+.env.local
+.env.production
+
+# IDE
+.vscode/
+.idea/
+*.swp
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+"""
+
+path = os.path.join(here, ".gitignore")
+with open(path, "w") as f:
+    f.write(gitignore)
+print(f"Created: {path}")
+ 
