@@ -1,0 +1,14 @@
+
+requirements = """fastapi==0.104.1
+uvicorn==0.24.0
+sqlalchemy==2.0.23
+python-jose[cryptography]==3.3.0
+passlib[bcrypt]==1.7.4
+python-multipart==0.0.6
+pydantic[email]==2.5.0
+"""
+
+path = os.path.join(here, "requirements.txt")
+with open(path, "w") as f:
+    f.write(requirements)
+print(f"Created: {path}")
