@@ -1,0 +1,18 @@
+render_yaml = """services:
+  - type: web
+    name: trustpay-africa-backend
+    env: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn backend:app --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: SECRET_KEY
+        generateValue: true
+      - key: PYTHON_VERSION
+        value: 3.11.0
+"""
+
+path = os.path.join(here, "render.yaml")
+with open(path, "w") as f:
+    f.write(render_yaml)
+print(f"Created: {path}")
